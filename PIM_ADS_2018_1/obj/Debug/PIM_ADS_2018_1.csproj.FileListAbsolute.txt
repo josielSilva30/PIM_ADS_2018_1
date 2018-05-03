@@ -1,0 +1,7 @@
+C:\Users\jp_ma\source\repos\PIM_ADS_2018_1\PIM_ADS_2018_1\bin\PIM_ADS_2018_1.dll.config
+C:\Users\jp_ma\source\repos\PIM_ADS_2018_1\PIM_ADS_2018_1\bin\PIM_ADS_2018_1.dll
+C:\Users\jp_ma\source\repos\PIM_ADS_2018_1\PIM_ADS_2018_1\bin\PIM_ADS_2018_1.pdb
+C:\Users\jp_ma\source\repos\PIM_ADS_2018_1\PIM_ADS_2018_1\obj\Debug\PIM_ADS_2018_1.csprojResolveAssemblyReference.cache
+C:\Users\jp_ma\source\repos\PIM_ADS_2018_1\PIM_ADS_2018_1\obj\Debug\PIM_ADS_2018_1.csproj.CoreCompileInputs.cache
+C:\Users\jp_ma\source\repos\PIM_ADS_2018_1\PIM_ADS_2018_1\obj\Debug\PIM_ADS_2018_1.dll
+C:\Users\jp_ma\source\repos\PIM_ADS_2018_1\PIM_ADS_2018_1\obj\Debug\PIM_ADS_2018_1.pdb
