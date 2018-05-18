@@ -17,85 +17,73 @@
 
   </head>
   <body>
-
-  <div data-role="page">
-
-   <nav class="navbar navbar-light" style="background-color: #08088A;">
-     <a class="navbar-brand" href="index.html" style="color: #FFFF00">
-      <img src="img/back6.png" width="30" height="30" class="d-inline-block align-top" alt="">
-      Voltar
-     </a>
-    </nav>
-
-    <p>
+    <div data-role="page">
+      <!--Barra de Navegação-->
+      <nav class="navbar navbar-light" style="background-color: #08088A;">
+        <a class="navbar-brand" href="index.html" style="color: #FFFF00">
+          <img src="img/back6.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          Voltar
+        </a>
+      </nav>
+      
       <center>
         <h5><b>Salas</b></h5>
-      </center>
-    </p>
-  </div>
+      </center>  
 
-    <!--
- 		<form action="#" method="GET">
+      <form style="border:35px solid #81BEF7" action="#" method="GET" />
 
-            <br>         
-             <select name="select-choice-min" id="select-choice-min" data-mini="true">
-   			  <option value="standard">Selecione o Campus</option>
-             </select>                      
-            
-             <select name="select-choice-min" id="select-choice-min" data-mini="true">
-   			  <option value="standard">Selecione o Período</option>
-             </select>                      
-            
-             <select name="select-choice-min" id="select-choice-min" data-mini="true">
-   			  <option value="standard">Selecione o Curso</option>
-             </select>
-            
-             <select name="select-choice-min" id="select-choice-min" data-mini="true">
-   			 <option value="standard">Selecione o Semestre</option>
-   			 <option value="standard">1º</option>
-   			 <option value="standard">2º</option>
-   			 <option value="standard">3º</option>
-   			 <option value="standard">4º</option>
-   			 <option value="standard">5º</option>
-   			 <option value="standard">6º</option>
-   			 <option value="standard">7º</option>
-   			 <option value="standard">8º</option>
-   			 <option value="standard">9º</option>
-   			 <option value="standard">10º</option>
-   			 </select>
+        <select id="campo1" name="campus" class="form-control form-control-sm" >
+          <option value="0" selected="selected">Campus</option>          
+        </select>           
+               
+        <br>                  
+        <select id="campo2" name="periodo" class="form-control form-control-sm" >
+          <option value="0" selected="selected">Período</option>
+        </select>
 
-   			 <br>
-   			 <br>
-   			 <div class="row">
-               <div class="col-md-6">
-                <div class="input-group">
-                 <input id="bt" type="button" value="Buscar" class="form-control" data-mini="true" data-icon="search" />
-                </div>
-               </div>
+        <br>
+        <select id="campo3" name="curso" class="form-control form-control-sm" >
+          <option value="0" selected="selected">Curso</option>
+        </select>
 
-               <br>
-               <div class="col-md-6">
-                <div class="input-group">
-                 <input id="btl" type="button" value="Limpar" class="form-control" data-mini="true" data-icon="minus" />           
-                </div>
-               </div>                
+        <br>
+        <center>          
+          <h6>Semestre</h6>          
+            <div class="col-md-2">
+              <input id="campo4" type="number"  min='1' max='10' name="semestre" class="form-control form-control-sm"/>
+            </div>        
+        </center>  
+
+        <br>
+        <div class="input-group">
+          <input id="bt" type="button" value="Buscar" class="form-control form-control-sm"/>
+        </div>
+        <br>          
+        <div class="input-group">
+          <input id="btl" type="button" value="Limpar" class="form-control form-control-sm"/>           
+        </div>            
+
+        <br>
+        <center>
+          <h6><b>Localização:</b></h6>
+            <div class="col-md-6">
+              <div class="input-group">
+                <center>
+                  <input id="resposta" type="text" name="resposta" disabled size="25" />
+                </center>
               </div>
+            </div>          
+        </center>
+      </form>		
 
-        </form>
+   		<nav class="navbar fixed-bottom navbar-light" style="background-color: #08088A;">
+        <a class="navbar-brand" style="color: #FFFF00">Grupo DevOps</a>
+      </nav>
+ 	  </div>
 
- 		
- 		-->
-
- 		<nav class="navbar fixed-bottom navbar-light" style="background-color: #08088A;">
-     <a class="navbar-brand" style="color: #FFFF00">Grupo DevOps</a>
-    </nav>
-
- 	</div>
-
-<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
- </body>
+  </body>
 </html>
