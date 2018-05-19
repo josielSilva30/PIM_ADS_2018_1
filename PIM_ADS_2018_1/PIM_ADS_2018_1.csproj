@@ -58,6 +58,57 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Apresentacao\dashboard.html" />
+    <Content Include="Apresentacao\Login.html" />
+    <Content Include="Apresentacao\Users.html" />
+    <Content Include="Modelo\conexao.php" />
+    <Content Include="img\add.ico" />
+    <Content Include="img\contato.jpg" />
+    <Content Include="img\create.png" />
+    <Content Include="img\edit-2.svg" />
+    <Content Include="img\edit.ico" />
+    <Content Include="img\favicon.ico" />
+    <Content Include="img\like.png" />
+    <Content Include="img\logo-unip.png" />
+    <Content Include="img\logo.ico" />
+    <Content Include="img\system.jpg" />
+    <Content Include="img\Team.jpg" />
+    <Content Include="img\unip-sorocaba.jpg" />
+    <Content Include="Modelo\api_andar.php" />
+    <Content Include="Modelo\api_andar_com_parametro.php" />
+    <Content Include="Modelo\api_bloco.php" />
+    <Content Include="Modelo\api_bloco_com_parametro.php" />
+    <Content Include="Modelo\api_campus.php" />
+    <Content Include="Modelo\api_campus_com_parametro.php" />
+    <Content Include="Modelo\api_cidade.php" />
+    <Content Include="Modelo\api_cidade_com_parametro.php" />
+    <Content Include="Modelo\api_curso.php" />
+    <Content Include="Modelo\api_curso_com_parametro.php" />
+    <Content Include="Modelo\api_periodo.php" />
+    <Content Include="Modelo\api_periodo_com_parametro.php" />
+    <Content Include="Modelo\api_sala.php" />
+    <Content Include="Modelo\api_sala_com_parametro.php" />
+    <Content Include="Modelo\api_semestre.php" />
+    <Content Include="Modelo\api_semestre_com_parametro.php" />
+    <Content Include="Modelo\api_turmas.php" />
+    <Content Include="Modelo\api_turma_com_parametro.php" />
+    <Content Include="Modelo\api_usuario.php" />
+    <Content Include="Modelo\validalogin.php" />
+    <Content Include="Properties\css\bootstrap-grid.css.map" />
+    <Content Include="Properties\css\bootstrap-grid.min.css.map" />
+    <Content Include="Properties\css\bootstrap-reboot.css.map" />
+    <Content Include="Properties\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Properties\css\bootstrap.css.map" />
+    <Content Include="Properties\css\bootstrap.min.css.map" />
+    <Content Include="Properties\css\carousel.css" />
+    <Content Include="Properties\css\dashboard.css" />
+    <Content Include="Properties\css\signin.css" />
+    <Content Include="Properties\css\starter-template.css" />
+    <Content Include="Properties\jquery-3.3.1.min.js" />
+    <Content Include="Properties\js\bootstrap.bundle.js.map" />
+    <Content Include="Properties\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Properties\js\bootstrap.js.map" />
+    <Content Include="Properties\js\bootstrap.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -66,15 +117,37 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Apresentacao\About.html" />
+    <Content Include="Apresentacao\App.html" />
+    <Content Include="Apresentacao\Cadastrar_Salas.html" />
+    <Content Include="Apresentacao\Campus_Turmas_Cursos.html" />
+    <Content Include="Apresentacao\Contato.html" />
+    <Content Include="Apresentacao\Editar_Salas.html" />
+    <Content Include="Apresentacao\Equipe.html" />
+    <Content Include="Apresentacao\Excluir_Salas.html" />
     <Content Include="Apresentacao\Home_Page.html" />
+    <Content Include="Apresentacao\spec.html" />
+    <Content Include="Properties\css\bootstrap-grid.css" />
+    <Content Include="Properties\css\bootstrap-grid.min.css" />
+    <Content Include="Properties\css\bootstrap-reboot.css" />
+    <Content Include="Properties\css\bootstrap-reboot.min.css" />
+    <Content Include="Properties\css\bootstrap.css" />
+    <Content Include="Properties\css\bootstrap.min.css" />
+    <Content Include="Properties\js\bootstrap.bundle.js" />
+    <Content Include="Properties\js\bootstrap.bundle.min.js" />
+    <Content Include="Properties\js\bootstrap.js" />
+    <Content Include="Properties\js\bootstrap.min.js" />
+    <Content Include="Properties\js\vendor\anchor.min.js" />
+    <Content Include="Properties\js\vendor\clipboard.min.js" />
+    <Content Include="Properties\js\vendor\holder.min.js" />
+    <Content Include="Properties\js\vendor\jquery-slim.min.js" />
+    <Content Include="Properties\js\vendor\popper.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modelo\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

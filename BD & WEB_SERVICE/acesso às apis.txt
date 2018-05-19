@@ -1,0 +1,4 @@
+http://localhost/unipsalas/webservices/api_turmas.php
+http://localhost/unipsalas/webservices/api_turma_com_parametro.php?turma=DS1P16
+
+Obs: para visualizar o resultado em XML adicione "&format=xml" após a chave de acesso

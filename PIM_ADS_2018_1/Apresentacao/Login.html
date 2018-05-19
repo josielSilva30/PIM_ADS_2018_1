@@ -1,0 +1,91 @@
+﻿<?php
+  session_start();
+    //require '../Modelo/conexao.php';
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="../img/favicon.ico">
+
+    <!-- Title Page -->
+    <title>UniMaps</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../Properties/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+    <!--<script type="text/javascript" src="../Properties/js/jquery-3.2.1.min.js"></script>-->
+
+    <!-- Custom styles for this template -->
+    <link href="../Properties/css/signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+    <style>
+        body {
+            background-image: url('../img/unip-sorocaba.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+        }
+
+        input[type=email] {
+            border-left: 2px #ffffff;
+            border-right: 2px #ffffff;
+            border-top: 2px #ffffff;
+            background: none;
+            font-size: 25px;
+            height: 40px;
+        }
+
+        input[type=password] {
+            border-left: 2px #ffffff;
+            border-right: 2px #ffffff;
+            border-top: 2px #ffffff;
+            background: none;
+            font-size: 25px;
+            height: 40px;
+        }
+    </style>
+    <form class="form-signin" method="POST" action="../Modelo/validalogin.php">
+        <img class="mb-4" src="../img/logo-unip.png" alt="" width="260" height="100">
+        <h1 class="h3 mb-3 font-weight-normal text-light">Faça seu acesso</h1>
+        <label for="inputEmail" class="sr-only">Usuário</label>
+        <input type="email" name ="email" id="inputEmail" class="text-light" placeholder="Usuário" required autofocus>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" name="password" id="inputPassword" class="text-light" placeholder="Senha" required>
+        <div class="checkbox mb-3">
+            <label class="text-light">
+               <!-- <input type="checkbox" value="Lembrar-me"> Deseja salvar as suas credenciais?-->
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+    <p class="text-center text-danger">
+      <?php if(isset($_SESSION['loginErro'])){
+        echo $_SESSION['loginErro'];
+        unset($_SESSION['loginErro']);
+      }?>
+    </p>
+    <p class="text-center text-success">
+      <?php 
+      if(isset($_SESSION['logindeslogado'])){
+        echo $_SESSION['logindeslogado'];
+        unset($_SESSION['logindeslogado']);
+      }
+      ?>
+    </p>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>
