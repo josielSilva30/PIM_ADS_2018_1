@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="..\img\logo.ico">
+
+    <title>Unip Salas</title>
+
+    <!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">
+	
+	
+	<style>
+		.bg-dark {
+			background-color: rgba(54, 95, 149, 0.7)!important;
+		}
+		
+	</style>
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-top-fixed.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="index.html#"><font color="yellow">UNIP SALAS</font></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse2">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html#">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Editar_Salas.html">Editar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="Excluir_Slas.html">Excluir</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+	<br></br>
+	<br></br>
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1>Cadastrar Salas</h1>
+        <p class="lead">Nesta sessão você poderá criar novas salas e cadastrar ao sistema da Unip Salas.</p>
+      </div>
+	<form>
+	<div class="form-group">
+		<label for="CadastroSala">Número da sala</label>
+		<input type="sala" class="form-control" id="CadastroSala" placeholder="Ex.: 20" aria-describedby="SalaHelp">
+		<small id="SalaHelp" class="form-text text-muted">O número da sala é linkado ao Bloco, portanto, não pode se repetir o número no mesmo bloco .</small>
+	</div>
+		<a>Bloco da sala</a>
+		<select class="form-control">
+			<option>Selecione</option>
+			<option>A</option>
+			<option>B</option>
+			<option>C</option>
+			<option>D</option>
+			<option>E</option>
+			<option>F</option>
+			<option>G</option>
+			<option>H</option>
+			
+		</select>
+		<p></p>
+	
+		<a>Andar</a>
+		<select class="form-control">
+			<option>Selecione</option>
+			<option>3º Sub-solo</option>
+			<option>2º Sub-solo</option>
+			<option>1º Sub-solo</option>
+			<option>Térreo</option>
+			<option>1º Andar</option>
+			<option>2º Andar</option>
+			
+		</select>
+	
+		<p></p>
+		<a>Turno</a>
+		<select class="form-control">
+			<option>Selecione</option>
+			<option>Manhã</option>
+			<option>Noite</option>
+		</select>
+	<br></br>
+	
+	<a>Turmas<a>
+	<p></p>
+	<div class="form-check">
+		<label class="form-check-label">
+			<input type="checkbox" class="form-check-input">
+		DS1P17	&nbsp&nbsp&nbsp
+		</label>
+		<label class="form-check-label">
+			<input type="checkbox" class="form-check-input">
+		DS2P17	&nbsp&nbsp&nbsp
+		</label><label class="form-check-label">
+			<input type="checkbox" class="form-check-input">
+		TI1P19	&nbsp&nbsp&nbsp
+		</label><label class="form-check-label">
+			<input type="checkbox" class="form-check-input">
+		TI4P19	&nbsp&nbsp&nbsp
+		</label><label class="form-check-label">
+			<input type="checkbox" class="form-check-input">
+		ENG_C1P22	&nbsp&nbsp&nbsp
+		</label><label class="form-check-label">
+			<input type="checkbox" class="form-check-input">
+		ENG_C3P22	&nbsp&nbsp&nbsp
+		</label><label class="form-check-label">
+			<input type="checkbox" class="form-check-input">
+		BIO_MD12	&nbsp&nbsp&nbsp
+		</label>
+	<br></br>	
+		
+	</div>
+	<button type="submit" class="btn btn-primary">Cadastrar</button>
+	</form>
+	<br></br>
+	<br></br>
+	  
+    </main>
+	
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

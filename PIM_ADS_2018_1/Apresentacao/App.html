@@ -1,0 +1,161 @@
+﻿<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../img/logo.ico">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <title>Unip Salas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../Properties/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .bg-dark {
+            background-color: rgba(54, 95, 149, 1.0) !important;
+        }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link href="navbar-top-fixed.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <center><a aling class="navbar-brand" href="index.html"><font color="yellow">UNIP SALAS</font></a></center>
+    </nav>
+    <br><br>
+    <main role="main" class="container">
+            <div class="center">
+                <br>
+                <center> <a> <img class="center" alt="350x100" style="width: 300px; height: 100px;" src="../img/logo-unip.png" data-holder-rendered="true" text-align="center"></a></center>
+            </div>
+
+        <form action="#" method="GET">
+
+            Campus<br>
+            <select id="campo1" name="campus" class="form-control">
+                <option value="0" selected="selected">Escolha</option>
+            </select>
+            <br>
+            Periodo<br>
+            <select id="campo2" name="periodo" class="form-control">
+                <option value="0" selected="selected">Escolha</option>
+            </select>
+            <br>
+            Curso<br>
+            <select id="campo3" name="curso" class="form-control">
+                <option value="0" selected="selected">Escolha</option>
+            </select>
+            <br>
+            <div class="row">
+                <div class="col -md">
+                    Digite o semestre:
+                </div>
+                <div class="col-md">
+                    <input id="campo4" type="number" value='1' min='1' max='10' name="semestre" class="form-control" />
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md">
+                    <div class="input-group">
+                        <input id="bt" type="button" value="Enviar" class="form-control" data-icon="search" />
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="input-group">
+                        <input id="btl" type="button" value="Limpar" class="form-control" data-icon="minus" />
+                    </div>
+                </div>
+                
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    Salas encontradas:
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" name="resposta" id="resposta" class="form-control disabled" />
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <hr class="featurette-divider">
+            <footer class="container">
+                <p class="float-right">Copyright All Rights Reserved © 2017 · Unip Salas Group</p>
+                <p>© 2017 DevOps Group, Ltda. · </p>
+            </footer>
+        </form>
+
+        <script>
+            var globalres = '';
+
+            $.get("../Modelo/api_campus.php", function (data) { // webpim.php?tipo=option&tabela=Campus&campo=campus&valor=codCampus", function (data) {
+                $("#campo1").append(data);
+            });
+
+            $.get("../../../webpim.php?tipo=option&tabela=Periodo&campo=periodo&valor=codPeriodo", function (data) {
+                $("#campo2").append(data);
+            });
+            $.get("../../../webpim.php?tipo=option&tabela=Curso&campo=curso&valor=codCurso", function (data) {
+                $("#campo3").append(data);
+            });
+
+
+            $('#bt').click(function () {
+                var c1, c2, c3, c4;
+                c1 = $('#campo1').val();
+                c2 = $('#campo2').val();
+                c3 = $('#campo3').val();
+                c4 = $('#campo4').val();
+
+                if (c1 == "0" || c2 == "0" || c3 == "0" || c4 == "") {
+                    alert("Preencha todos os campos");
+                }
+                else {
+
+                    $.get("../../../webpim.php?tipo=text&campo1=" + c1 + "&campo2=" + c2 + "&campo3=" + c3 + "&campo4=" + c4, function (data) {
+                        globalres = data;
+
+                        $("#resposta").val('Sua sala é: ' + data);
+                    });
+                }
+            });
+
+            $('#btl').click(function () {
+                limpar();
+            });
+            function limpar() {
+                $('#campo1').val('');
+                $('#campo1').selectmenu('refresh');
+                $('#campo2').val('');
+                $('#campo2').selectmenu('refresh');
+                $('#campo3').val('');
+                $('#campo3').selectmenu('refresh');
+                $('#campo4').val('');
+                $("#resposta").val('');
+
+            }
+
+            $(document).on('pagebeforeshow', '#index', function () {
+                limpar();
+            });
+
+        </script>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../properties/js/vendor/popper.min.js"></script>
+    <script src="../Properties/js/bootstrap.min.js"></script>
+</body>
+</html>

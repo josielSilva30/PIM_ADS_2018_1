@@ -1,0 +1,48 @@
+<?php
+//formato
+$format = isset($_GET['format']) && strtolower($_GET['format']) == 'xml' ? 'xml' : 'json';
+$turma = $_GET['turma'];
+
+/* connect to the db */
+$link = mysql_connect('localhost','root','') or die('Não foi possível conectar ao banco');
+mysql_select_db('unipsalas',$link) or die('Não foi possível selecionar o banco');
+
+/* grab the posts from the db */
+$query = "SELECT codTurma, nomeTurma, statusTurma FROM turma WHERE codTurma = '$turma'";
+$result = mysql_query($query,$link) or die('Errant query:  '.$query);
+
+/* create one master array of the records */
+$posts = array();
+if(mysql_num_rows($result)) {
+	while($post = mysql_fetch_assoc($result)) {
+		$posts[] = array('post'=>$post);
+	}
+}
+
+/* output in necessary format */
+if($format == 'xml') {
+	header('Content-type: text/xml');
+	echo '<posts>';
+	foreach($posts as $index => $post) {
+		if(is_array($post)) {
+			foreach($post as $key => $value) {
+				echo '<',$key,'>';
+				if(is_array($value)) {
+					foreach($value as $tag => $val) {
+						echo '<',$tag,'>',htmlentities($val),'</',$tag,'>';
+					}
+				}
+				echo '</',$key,'>';
+			}
+		}
+	}
+	echo '</posts>';
+}
+else {
+	header('Content-type: application/json');
+	echo json_encode(array('posts'=>$posts));
+}
+
+/* disconnect from the db */
+@mysql_close($link);
+?>
