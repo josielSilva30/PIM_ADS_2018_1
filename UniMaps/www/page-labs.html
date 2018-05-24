@@ -32,31 +32,31 @@
       
       <form style="border:35px solid #81BEF7" action="#" method="GET"/>
                  
-        <select id="campo1" name="estruturas" class="form-control">
-          <option value="0" selected="selected">Escolha</option>          
+        <select class="form-control form-control-sm" id="labs" name="labs">
+          <option value="0" selected="selected">Escolha</option>
         </select>   
 
-        <br>
-        <div class="input-group">
-          <input id="btnBuscar" type="button" value="Buscar" class="form-control form-control-sm"/>
-        </div>
-        <br>                          
-        <div class="input-group">
-          <input id="btnLimpar" type="button" value="Limpar" class="form-control form-control-sm"/>           
-        </div>        
-             
+        <!--Botão de envio dos dados-->
         <br>
         <center>
-          <h6><b>Localização:</b></h6>
-            <div class="col-md-6">
-              <div class="input-group">
-                <center>
-                  <input id="idResposta" type="text" name="resposta" size="25" disabled/>
-                </center>
-              </div>
-            </div>          
+          <input id="btnEnviar" type="button" value="Buscar" class="btn btn-primary"/>
         </center>
+        <br>
+
+         <!--Botão de limpar o formulário-->        
+        <center>
+          <input id="btnLimpar" type="button" value="Limpar" class="btn btn-danger" data-icon="minus" />
+        </center> 
+      
+        <!--Campo retorno-->
+        <br> 
+        <center>
+          <label><b><h6>Localização:</b></h6></label>
+          <div id="resposta"></div>
+        </center>
+
       </form>
+
       <!--Rodapé-->		
       <nav class="navbar fixed-bottom navbar-light" style="background-color: #08088A;">
         <a class="navbar-brand" style="color: #FFFF00">Grupo DevOps</a>
