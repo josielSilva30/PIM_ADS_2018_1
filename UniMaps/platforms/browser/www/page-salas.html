@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <!-- Meta tags Obrigatórias -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+      <!-- Bootstrap CSS (Estilização com Bootstrap)-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+      <!-- Cor do plano de fundo-->
+      <style>
+          body
+          {
+            background-color: #81BEF7;
+          }
+      </style>
+
+      <title>Salas</title>
+  </head>
+
+  <body>
+    <div data-role="page">
+      <!--Barra de Navegação-->
+      <nav class="navbar navbar-light" style="background-color: #08088A;">
+        <a class="navbar-brand" href="index.html" style="color: #FFFF00">
+          <img src="img/back6.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Voltar
+        </a>
+      </nav>
+
+      <center>
+        <h5><b>Salas</b></h5>
+      </center>
+
+      <form style="border:35px solid #81BEF7" action="#" method="GET" name="Formulario" id="Formulario">
+              
+        <select class="form-control form-control-sm" id="campus" name="campus">
+          <option value="0" selected="selected">Campus</option>
+        </select>
+        <br>
+        <select class="form-control form-control-sm" id="periodo" name="periodo">
+          <option value="0" selected="selected">Período</option>
+        </select>
+        <br>      
+        <select class="form-control form-control-sm" id="curso" name="curso">
+          <option value="0" selected="selected">Curso</option>
+        </select>
+        <br>      
+        <select class="form-control form-control-sm" id="semestre" name="semestre">
+          <option value="0" selected="selected">Semestre</option>
+        </select>
+        
+        <!--Botão de envio dos dados-->
+        <br>
+        <center>
+          <input id="btnEnviar" type="button" value="Buscar" class="btn btn-primary"/>
+        </center>
+        <br>
+
+         <!--Botão de limpar o formulário-->        
+        <center>
+          <input id="btnLimpar" type="button" value="Limpar" class="btn btn-danger" data-icon="minus" />
+        </center> 
+      
+        <!--Campo retorno-->
+        <br> 
+        <center>
+          <label><b><h6>Localização:</b></h6></label>
+          <div id="resposta"></div>
+        </center>        
+
+      
+        <!--Rodapé-->
+        <nav class="navbar fixed-bottom navbar-light" style="background-color: #08088A;">
+          <a class="navbar-brand" style="color: #FFFF00">Grupo DevOps</a>
+        </nav>
+      </div>
+
+      </form>
+      <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+      <script>
+          $(document).ready(function () {
+              //preenchendo o campo CAMPUS
+              var $dropdown1 = $("#campus");
+              $.ajax({
+                  method: "GET", url: "http://191.252.96.136/plesk-site-preview/www.joao-pim.com.br/191.252.96.136/webservices/campus.php",
+              }).done(function (data) {
+                  var result = $.parseJSON(data);
+                  $.each(result, function (key, value) {
+                      $dropdown1.append($("<option />").val(value['codCampus']).text(value['nomeCampus']));
+                  });
+              });
+              //preenchendo o campo PERÍODO
+              var $dropdown2 = $("#periodo");
+              $.ajax({
+                  method: "GET", url: "http://191.252.96.136/plesk-site-preview/www.joao-pim.com.br/191.252.96.136/webservices/periodo.php",
+              }).done(function (data) {
+                  var result = $.parseJSON(data);
+                  $.each(result, function (key, value) {
+                      $dropdown2.append($("<option />").val(value['codPeriodo']).text(value['nomePeriodo']));
+                  });
+              });
+
+              //preenchendo o campo CURSO
+              var $dropdown3 = $("#curso");
+              $.ajax({
+                  method: "GET", url: "http://191.252.96.136/plesk-site-preview/www.joao-pim.com.br/191.252.96.136/webservices/curso.php",
+              }).done(function (data) {
+                  var result = $.parseJSON(data);
+                  $.each(result, function (key, value) {
+                      $dropdown3.append($("<option />").val(value['codCurso']).text(value['nomeCurso']));
+                  });
+              });
+
+              //preenchendo o campo SEMESTRE
+              var $dropdown4 = $("#semestre");
+              $.ajax({
+                  method: "GET", url: "http://191.252.96.136/plesk-site-preview/www.joao-pim.com.br/191.252.96.136/webservices/semestre.php",
+              }).done(function (data) {
+                  var result = $.parseJSON(data);
+                  $.each(result, function (key, value) {
+                      $dropdown4.append($("<option />").val(value['codSemestre']).text(value['nomeSemestre']));
+                  });
+              });
+          });
+
+          $("#btnEnviar").click(function () {
+              $campus = $("#campus").val();
+              $periodo = $("#periodo").val();
+              $curso = $("#curso").val();
+              $semestre = $("#semestre").val();
+
+              $resposta = $("#resposta");
+
+              $.ajax({
+                  method: "GET", url: "http://191.252.96.136/plesk-site-preview/www.joao-pim.com.br/191.252.96.136/webservices/turma.php?campus=" + $campus + "&periodo=" + $periodo + "&curso=" + $curso + "&semestre=" + $semestre,
+              }).done(function (data) {
+                  var result = $.parseJSON(data);
+                  $resposta.empty();
+                  $.each(result, function (key, value) {
+                      $resposta.append(value['nomeTurma'] + " - Código " + value['codTurma'] + " - Sala " + value['codSala'] + " - " + value['nomeBloco'] + " - " + value["nomeAndar"] );
+                      //alert(value['nomeTurma']);
+                  });
+              });
+
+          });
+
+          $("#btnLimpar").click(function () {
+              location.reload();
+          });
+      </script>
+  </body>
+</html>
