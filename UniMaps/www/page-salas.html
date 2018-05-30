@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-      <!-- Meta tags Obrigatórias -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">      
 
-      <!-- Bootstrap CSS (Estilização com Bootstrap)-->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <title>Salas</title>
 
-      <!-- Cor do plano de fundo-->
-      <style>
-          body
-          {
-            background-color: #81BEF7;
-          }
-      </style>
+    <!-- Bootstrap CSS (Estilização com Bootstrap)-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-      <title>Salas</title>
+    <!-- Cor do plano de fundo-->
+    <style>
+     body {background-color:#81BEF7;}
+    </style>          
   </head>
 
   <body>
@@ -25,8 +21,8 @@
       <!--Barra de Navegação-->
       <nav class="navbar navbar-light" style="background-color: #08088A;">
         <a class="navbar-brand" href="index.html" style="color: #FFFF00">
-          <img src="img/back6.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Voltar
+          <img src="img/btn-voltar.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          Voltar
         </a>
       </nav>
 
@@ -34,54 +30,55 @@
         <h5><b>Salas</b></h5>
       </center>
 
+      <!--Seleções para a busca da sala-->
       <form style="border:35px solid #81BEF7" action="#" method="GET" name="Formulario" id="Formulario">
               
         <select class="form-control form-control-sm" id="campus" name="campus">
-          <option value="0" selected="selected">Campus</option>
+          <option value="0" selected="selected">Escolha o campus</option>
         </select>
         <br>
         <select class="form-control form-control-sm" id="periodo" name="periodo">
-          <option value="0" selected="selected">Período</option>
+          <option value="0" selected="selected">Escolha o período</option>
         </select>
         <br>      
         <select class="form-control form-control-sm" id="curso" name="curso">
-          <option value="0" selected="selected">Curso</option>
+          <option value="0" selected="selected">Escolha o curso</option>
         </select>
         <br>      
         <select class="form-control form-control-sm" id="semestre" name="semestre">
-          <option value="0" selected="selected">Semestre</option>
-        </select>
+          <option value="0" selected="selected">Escolha o semestre</option>
+        </select>        
         
-        <!--Botão de envio dos dados-->
         <br>
-        <center>
-          <input id="btnEnviar" type="button" value="Buscar" class="btn btn-primary"/>
-        </center>
-        <br>
-
-         <!--Botão de limpar o formulário-->        
-        <center>
-          <input id="btnLimpar" type="button" value="Limpar" class="btn btn-danger" data-icon="minus" />
-        </center> 
+        <div class="row justify-content-around">    
+          <!--Botão de envio dos dados-->
+          <div class="col-8">
+            <input id="btnEnviar" type="button" value="Buscar" class="btn btn-primary"/>
+          </div>        
+          <!--Botão de limpar o formulário-->                
+          <div class="col-4">
+            <input id="btnLimpar" type="button" value="Limpar" class="btn btn-danger"/>
+          </div>
+        </div> 
       
-        <!--Campo retorno-->
+        <!--Campo de retorno do resultado-->
         <br> 
         <center>
           <label><b><h6>Localização:</b></h6></label>
           <div id="resposta"></div>
-        </center>        
-
+        </center>
+      </form>      
+        
+      <!--Rodapé-->
+      <nav class="navbar fixed-bottom navbar-light" style="background-color: #08088A;">
+        <a class="navbar-brand" style="color: #FFFF00">Grupo DevOps</a>
+      </nav>
+    </div>
       
-        <!--Rodapé-->
-        <nav class="navbar fixed-bottom navbar-light" style="background-color: #08088A;">
-          <a class="navbar-brand" style="color: #FFFF00">Grupo DevOps</a>
-        </nav>
-      </div>
-
-      </form>
-      <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
       <script>
           $(document).ready(function () {
               //preenchendo o campo CAMPUS
@@ -94,6 +91,7 @@
                       $dropdown1.append($("<option />").val(value['codCampus']).text(value['nomeCampus']));
                   });
               });
+
               //preenchendo o campo PERÍODO
               var $dropdown2 = $("#periodo");
               $.ajax({
@@ -135,7 +133,7 @@
               $semestre = $("#semestre").val();
 
               $resposta = $("#resposta");
-
+              
               $.ajax({
                   method: "GET", url: "http://191.252.96.136/plesk-site-preview/www.joao-pim.com.br/191.252.96.136/webservices/turma.php?campus=" + $campus + "&periodo=" + $periodo + "&curso=" + $curso + "&semestre=" + $semestre,
               }).done(function (data) {

@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Laboratórios e Outros</title>
+
     <!-- Bootstrap CSS (Estilização com Bootstrap)-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Cor do plano de fundo-->
     <style>
      body {background-color:#81BEF7;}
-    </style>
-
-    <title>Laboratórios e Outros</title>
+    </style>    
   </head>
 
   <body>
@@ -21,7 +21,7 @@
       <!--Barra de Navegação-->
       <nav class="navbar navbar-light" style="background-color: #08088A;">
         <a class="navbar-brand" href="index.html" style="color: #FFFF00">
-          <img src="img/back6.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          <img src="img/btn-voltar.png" width="30" height="30" class="d-inline-block align-top" alt="">
           Voltar
         </a>
       </nav>
@@ -30,31 +30,32 @@
         <h5><b>Laboratórios e Outros</b></h5>
       </center>    
       
+      <!--Seleção para a busca do laboratório ou outros-->
       <form style="border:35px solid #81BEF7" action="#" method="GET"/>
-                 
+
+        <br><br>
         <select class="form-control form-control-sm" id="labs" name="labs">
           <option value="0" selected="selected">Escolha</option>
         </select>   
 
-        <!--Botão de envio dos dados-->
         <br>
-        <center>
-          <input id="btnEnviar" type="button" value="Buscar" class="btn btn-primary"/>
-        </center>
-        <br>
-
-         <!--Botão de limpar o formulário-->        
-        <center>
-          <input id="btnLimpar" type="button" value="Limpar" class="btn btn-danger" data-icon="minus" />
-        </center> 
+        <div class="row justify-content-around">    
+          <!--Botão de envio dos dados-->
+          <div class="col-8">
+            <input id="btnEnviar" type="button" value="Buscar" class="btn btn-primary"/>
+          </div>        
+          <!--Botão de limpar o formulário-->                
+          <div class="col-4">
+            <input id="btnLimpar" type="button" value="Limpar" class="btn btn-danger"/>
+          </div>
+        </div> 
       
-        <!--Campo retorno-->
+        <!--Campo de retorno do resultado-->
         <br> 
         <center>
           <label><b><h6>Localização:</b></h6></label>
           <div id="resposta"></div>
         </center>
-
       </form>
 
       <!--Rodapé-->		
